@@ -129,7 +129,7 @@ function CarouselCard({ item }: { item: CarouselItem }) {
         {item.badges && item.badges.length > 0 && (
           <div className="flex flex-wrap gap-1 pt-1">
             {item.badges.map((badge, i) => (
-              <Badge key={i} variant={badge.variant === "destructive" ? "destructive" : badge.variant === "secondary" ? "secondary" : "default"}>
+              <Badge key={i} variant={(badge.variant as string) === "destructive" ? "destructive" : (badge.variant as string) === "secondary" ? "secondary" : "default"}>
                 {badge.label}
               </Badge>
             ))}
